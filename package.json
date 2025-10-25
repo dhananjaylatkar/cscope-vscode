@@ -14,8 +14,40 @@
   "contributes": {
     "commands": [
       {
-        "command": "cscope-vscode.helloWorld",
-        "title": "Hello World"
+        "command": "cscope-vscode.find.symbol",
+        "title": "cscope: find this C symbol"
+      },
+      {
+        "command": "cscope-vscode.find.global",
+        "title": "cscope: find this global definition"
+      },
+      {
+        "command": "cscope-vscode.find.called",
+        "title": "cscope: find functions called by this function"
+      },
+      {
+        "command": "cscope-vscode.find.calling",
+        "title": "cscope: find functions calling this function"
+      },
+      {
+        "command": "cscope-vscode.find.text",
+        "title": "cscope: find this text string"
+      },
+      {
+        "command": "cscope-vscode.find.egrep",
+        "title": "cscope: find this egrep pattern"
+      },
+      {
+        "command": "cscope-vscode.find.file",
+        "title": "cscope: find this file"
+      },
+      {
+        "command": "cscope-vscode.find.include",
+        "title": "cscope: find files including this file"
+      },
+      {
+        "command": "cscope-vscode.find.assignments",
+        "title": "cscope: find assignments to this symbol"
       }
     ]
   },
