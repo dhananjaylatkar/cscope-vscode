@@ -13,19 +13,17 @@ type CsWsResult = {
   res: CsResult[];
 };
 
-type CsOperation = number;
-
-export const ops: { [key: string]: CsOperation } = {
-  symbol: 0,
-  global: 1,
-  called: 2,
-  calling: 3,
-  text: 4,
-  egrep: 6,
-  file: 7,
-  include: 8,
-  assignments: 9,
-};
+export enum CsOps {
+  symbol = 0,
+  global = 1,
+  called = 2,
+  calling = 3,
+  text = 4,
+  egrep = 6,
+  file = 7,
+  include = 8,
+  assignments = 9,
+}
 
 function parse_lines(out: string): CsResult[] {
   let res: CsResult[] = [];
@@ -60,7 +58,7 @@ function parse_lines(out: string): CsResult[] {
   return res;
 }
 
-async function get_output(sym: string, op: number): Promise<CsWsResult[]> {
+async function get_output(sym: string, op: CsOps): Promise<CsWsResult[]> {
   let res: CsWsResult[] = [];
   if (sym === "") {
     return res;
@@ -119,7 +117,7 @@ function get_sym_under_cursor(): string {
   return sym;
 }
 
-export async function run(sym: string | null, op: CsOperation) {
+export async function run(sym: string | null, op: CsOps) {
   let _sym: string = sym === null ? get_sym_under_cursor() : sym;
 
   console.debug(`sym="${_sym}" op="${op}"`);

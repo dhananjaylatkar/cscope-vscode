@@ -10,31 +10,31 @@ export function activate(context: vscode.ExtensionContext) {
 
   const commands: vscode.Disposable[] = new Array(
     vscode.commands.registerCommand("cscope-vscode.find.symbol", () => {
-      find.run(null, find.ops["symbol"]);
+      find.run(null, find.CsOps.symbol);
     }),
     vscode.commands.registerCommand("cscope-vscode.find.global", () => {
-      find.run(null, find.ops["global"]);
+      find.run(null, find.CsOps.global);
     }),
     vscode.commands.registerCommand("cscope-vscode.find.called", () => {
-      find.run(null, find.ops["called"]);
+      find.run(null, find.CsOps.called);
     }),
     vscode.commands.registerCommand("cscope-vscode.find.calling", () => {
-      find.run(null, find.ops["calling"]);
+      find.run(null, find.CsOps.calling);
     }),
     vscode.commands.registerCommand("cscope-vscode.find.text", () => {
-      find.run(null, find.ops["text"]);
+      find.run(null, find.CsOps.text);
     }),
     vscode.commands.registerCommand("cscope-vscode.find.egrep", () => {
-      find.run(null, find.ops["egrep"]);
+      find.run(null, find.CsOps.egrep);
     }),
     vscode.commands.registerCommand("cscope-vscode.find.file", () => {
-      find.run(null, find.ops["file"]);
+      find.run(null, find.CsOps.file);
     }),
     vscode.commands.registerCommand("cscope-vscode.find.include", () => {
-      find.run(null, find.ops["include"]);
+      find.run(null, find.CsOps.include);
     }),
     vscode.commands.registerCommand("cscope-vscode.find.assignments", () => {
-      find.run(null, find.ops["assignments"]);
+      find.run(null, find.CsOps.assignments);
     })
   );
 
