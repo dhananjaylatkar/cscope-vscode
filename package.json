@@ -50,6 +50,62 @@
         "title": "cscope: find assignments to this symbol"
       }
     ],
+    "keybindings": [
+      {
+        "command": "cscope-vscode.find.symbol",
+        "key": "ctrl+\\ ctrl+s",
+        "mac": "cmd+\\ cmd+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.find.global",
+        "key": "ctrl+\\ ctrl+g",
+        "mac": "cmd+\\ cmd+g",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.find.called",
+        "key": "ctrl+\\ ctrl+d",
+        "mac": "cmd+\\ cmd+d",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.find.calling",
+        "key": "ctrl+\\ ctrl+c",
+        "mac": "cmd+\\ cmd+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.find.text",
+        "key": "ctrl+\\ ctrl+t",
+        "mac": "cmd+\\ cmd+t",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.find.egrep",
+        "key": "ctrl+\\ ctrl+e",
+        "mac": "cmd+\\ cmd+e",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.find.file",
+        "key": "ctrl+\\ ctrl+f",
+        "mac": "cmd+\\ cmd+f",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.find.include",
+        "key": "ctrl+\\ ctrl+i",
+        "mac": "cmd+\\ cmd+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.find.assignments",
+        "key": "ctrl+\\ ctrl+a",
+        "mac": "cmd+\\ cmd+a",
+        "when": "editorTextFocus"
+      }
+    ],
     "configuration": {
       "title": "cscope-vscode settings",
       "properties": {
