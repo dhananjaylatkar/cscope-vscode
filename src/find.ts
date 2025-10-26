@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { cmd_run } from "./utils";
+import { cmd_run, get_word } from "./utils";
 
 type CsResult = {
   fname: string;
@@ -87,38 +87,15 @@ async function get_output(sym: string, op: CsOps): Promise<CsWsResult[]> {
   return res;
 }
 
-function get_sym_under_cursor(): string {
-  const editor = vscode.window.activeTextEditor;
-  if (!editor) {
-    return "";
+export async function run(
+  sym: string | null,
+  op: CsOps
+): Promise<CsWsResult[] | null> {
+  let _sym: string | null = sym === null ? get_word() : sym;
+
+  if (!_sym) {
+    return null;
   }
-
-  const document = editor.document;
-  const selection = editor.selection;
-
-  let sym: string;
-
-  // Check if there is a selection (non-empty range)
-  if (!selection.isEmpty) {
-    // Get the selected text
-    sym = document.getText(selection);
-  } else {
-    // No selection, get word under cursor
-    const position = selection.active;
-    const wordRange = document.getWordRangeAtPosition(position);
-
-    if (wordRange) {
-      sym = document.getText(wordRange);
-    } else {
-      return "";
-    }
-  }
-
-  return sym;
-}
-
-export async function run(sym: string | null, op: CsOps) {
-  let _sym: string = sym === null ? get_sym_under_cursor() : sym;
 
   console.debug(`sym="${_sym}" op="${op}"`);
   let out = await get_output(_sym, op);
