@@ -66,7 +66,10 @@ async function get_output(sym: string, op: number): Promise<CsWsResult[]> {
     return res;
   }
 
-  let cmd = `cscope -dL -${op} ${sym}`;
+  const config = vscode.workspace.getConfiguration("cscope-vscode");
+  const bin = config.get("bin");
+
+  let cmd = `${bin} -dL -${op} ${sym}`;
   const workspaceFolders = vscode.workspace.workspaceFolders;
 
   if (!workspaceFolders) {
