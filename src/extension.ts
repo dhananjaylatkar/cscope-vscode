@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import * as find from "./find";
+import * as db from "./db";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -35,7 +36,8 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand("cscope-vscode.find.assignments", () => {
       find.run(null, find.CsOps.assignments);
-    })
+    }),
+    vscode.commands.registerCommand("cscope-vscode.db.build", db.build)
   );
 
   context.subscriptions.push(...commands);

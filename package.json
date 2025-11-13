@@ -48,6 +48,10 @@
       {
         "command": "cscope-vscode.find.assignments",
         "title": "cscope: find assignments to this symbol"
+      },
+      {
+        "command": "cscope-vscode.db.build",
+        "title": "cscope: db: build"
       }
     ],
     "keybindings": [
@@ -104,6 +108,12 @@
         "key": "ctrl+\\ ctrl+a",
         "mac": "cmd+\\ cmd+a",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "cscope-vscode.db.build",
+        "key": "ctrl+\\ ctrl+b",
+        "mac": "cmd+\\ cmd+b",
+        "when": "editorTextFocus"
       }
     ],
     "configuration": {
@@ -113,6 +123,16 @@
           "type": "string",
           "default": "cscope",
           "description": "path to cscope binary"
+        },
+        "cscope-vscode.build_args": {
+          "type": "string",
+          "default": "-Rbqk",
+          "description": "build command arguments"
+        },
+        "cscope-vscode.build_script": {
+          "type": "string",
+          "default": "none",
+          "description": "build script (optional)"
         }
       }
     }
